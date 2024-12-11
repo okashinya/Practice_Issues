@@ -1,11 +1,11 @@
 "use client";
 
-import { subAction } from "App";
+import { subAction } from "../_components/ServerActions/PostalCodeProcess";
 import { useFormState } from "react-dom";
 
 export default function CommentList() {
   const initialState = { error: "" };
-  const [state, dispatch] = useFormState(submitAction, initialState);
+  const [state, dispatch] = useFormState(subAction, initialState);
 
   return (
     <>
@@ -13,13 +13,13 @@ export default function CommentList() {
       <form action={subAction}>
         <div name="comment-form" aria-describedby="comment-error">
           <div>
-            <label htmlFor="comment">comment</label>
+            <label htmlFor="comment">郵便番号</label>
           </div>
           <div>
-            <input id="comment" name="comment" type="text" required />
+            <input id="comment" name="PostalCode" type="text" required />
           </div>
           <div>
-            <button type="submit"> Add Comment</button>
+            <button type="submit">検索する</button>
           </div>
         </div>
         {state.error && (

@@ -1,6 +1,6 @@
 "use client";
 
-import { submitAction } from "./ServerActions/PostalCodeProcess";
+import { subAction } from "./ServerActions/PostalCodeProcess";
 import { useFormState } from "react-dom";
 
 export default function CommentList() {
@@ -10,7 +10,7 @@ export default function CommentList() {
   return (
     <>
       <h2>Server Actions</h2>
-      <form action={submitAction}>
+      <form action={dispatch}>
         <div name="comment-form" aria-describedby="comment-error">
           <div>
             <label htmlFor="comment">comment</label>

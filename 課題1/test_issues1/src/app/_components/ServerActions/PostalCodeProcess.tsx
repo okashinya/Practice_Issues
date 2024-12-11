@@ -1,7 +1,6 @@
-import App from "next/app";
+"use server";
 
-async function subAction(formData: FormData) {
-    "use server";
-    console.log("hello");
+export async function subAction(formData: FormData) {
+    
+    console.log(formData.get("PostalCode"));
   }
-export default App
