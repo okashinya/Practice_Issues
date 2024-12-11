@@ -2,6 +2,7 @@ import {
   Box,
   Divider,
   Drawer,
+  Link,
   List,
   ListItem,
   ListItemButton,
@@ -33,30 +34,20 @@ const SideBar = () => {
       <Toolbar />
       <Box sx={{ overflow: "auto" }}>
         <List>
-          {["ホーム", "課題1", "Send email", "Drafts"].map((text, index) => (
+          {["ホーム", "Practice1", "380z", "Drafts"].map((text, index) => (
             <ListItem key={text} disablePadding>
               <ListItemButton>
                 <ListItemIcon>
                   {text === "ホーム" ? <HomeIcon /> : <CodeIcon />}
                 </ListItemIcon>
-                <ListItemText primary={text} />
+                <Link href={text !== "ホーム" ? "/"+text: "/"} underline="none" color="inherit">
+                {text}
+                </Link>
               </ListItemButton>
             </ListItem>
           ))}
         </List>
         <Divider />
-        <List>
-          {["All mail", "Trash", "Spam"].map((text, index) => (
-            <ListItem key={text} disablePadding>
-              <ListItemButton>
-                <ListItemIcon>
-                  {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                </ListItemIcon>
-                <ListItemText primary={text} />
-              </ListItemButton>
-            </ListItem>
-          ))}
-        </List>
       </Box>
     </Drawer>
   );

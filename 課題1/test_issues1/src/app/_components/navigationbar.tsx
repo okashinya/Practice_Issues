@@ -10,7 +10,7 @@ const NavigationBar = () => {
     >
       <Toolbar>
         <Typography variant="h6" noWrap component="div">
-          Clipped drawer
+          MUI練習アプリケーション
         </Typography>
       </Toolbar>
     </AppBar>
