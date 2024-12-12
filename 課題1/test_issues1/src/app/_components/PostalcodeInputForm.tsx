@@ -1,33 +1,32 @@
 "use client";
 
 import { subAction } from "./ServerActions/PostalCodeProcess";
-import { useFormState } from "react-dom";
+import { TextField,Button,Stack} from "@mui/material";
+import SendIcon from '@mui/icons-material/Send';
 
-export default function CommentList() {
-  const initialState = { error: "" };
-  const [state, dispatch] = useFormState(submitAction, initialState);
 
-  return (
+const PostalForm = () => {
+    
+    const initialState = { error: "" };
+    
+    return (
     <>
-      <h2>Server Actions</h2>
-      <form action={dispatch}>
-        <div name="comment-form" aria-describedby="comment-error">
-          <div>
-            <label htmlFor="comment">comment</label>
-          </div>
-          <div>
-            <input id="comment" name="comment" type="text" required />
-          </div>
-          <div>
-            <button type="submit"> Add Comment</button>
-          </div>
-        </div>
-        {state.error && (
-          <div name="display-error" id="comment-error" aria-live="polite" aria-atomic="true">
-            <p>{state.error}</p>
-          </div>
-        )}
-      </form>
+
+        <h2>Server Actions</h2>
+    <Stack
+      component="form"
+      action={subAction}
+      sx={{ width: '25ch' }}
+      spacing={2}
+      noValidate
+      autoComplete="off"
+      method="POST"
+    >
+        <TextField id="standard-basic" name="PostalCode" label="郵便番号を入力" variant="standard" />
+        <Button type="submit" variant="contained" endIcon={<SendIcon />}>送信する</Button>
+        </Stack>
     </>
-  );
-}
+    );
+  };
+  
+  export default PostalForm;
