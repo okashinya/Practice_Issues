@@ -5,7 +5,7 @@ type State = {
 export async function subAction(previousState: State ,formData: FormData) {
     console.log(formData.get("PostalCode"));
     if(formData.get("PostalCode")!= ""){
-    return{message:"awsedrftgyhu"}}
+    return{message:"true"}}
     else{
-    return{message:"郵便番号を入力してください。"}}
+    return{message:"false"}}
   }
