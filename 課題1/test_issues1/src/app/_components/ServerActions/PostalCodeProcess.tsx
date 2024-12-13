@@ -5,18 +5,24 @@ type State = {
 export async function subAction(previousState: State ,formData: FormData) {
 
     const currentInput = String(formData.get("PostalCode")).replace("-","")
-    const InputState = String(Number(currentInput)) != "NaN" && currentInput.length == 7
+    let InputState = String(Number(currentInput)) != "NaN" && currentInput.length == 7
     let ErrorState = ""
     let resultsAddress = []
     if(InputState){
         const res = await fetch("https://zipcloud.ibsnet.co.jp/api/search?zipcode="+currentInput);
         const getJson = await res.json();
         console.log(getJson.status)
-        if(getJson.status != 200)
+        if(getJson.status != 200){
+            InputState=false
             ErrorState = "APIエラーです。"
-        for (const value of getJson.results) {
-            resultsAddress.push(<><br/>{value.address1+value.address2+value.address3}</>)
-            
+        }
+        if(getJson.results){
+            for (const value of getJson.results) {
+               resultsAddress.push(<><br/>{value.address1+value.address2+value.address3}</>)
+            }
+        }else{
+            InputState=false
+            ErrorState = "該当する住所がありません。"
         }
         console.log(resultsAddress);
         //console.log(getJson.results)

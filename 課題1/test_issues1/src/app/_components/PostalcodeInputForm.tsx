@@ -3,7 +3,7 @@
 import { subAction } from "./ServerActions/PostalCodeProcess";
 import { TextField,Button,Stack,Box,Typography} from "@mui/material";
 import SendIcon from '@mui/icons-material/Send';
-import { useFormState ,Link} from 'react-dom'
+import { useFormState ,Link} from 'react-dom';
 import { usePathname } from "next/navigation";
 
 
@@ -30,7 +30,6 @@ const PostalForm = () => {
     </>;
 
     if(state.message[0]){
-        const tesr = <><br/>12345</>
         currentForm = <>
         <h2>郵便番号住所検索</h2>
         <Box
