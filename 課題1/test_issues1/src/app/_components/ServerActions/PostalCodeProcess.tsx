@@ -11,7 +11,7 @@ export async function subAction(previousState: State ,formData: FormData) {
     if(InputState){
         const res = await fetch("https://zipcloud.ibsnet.co.jp/api/search?zipcode="+currentInput);
         const getJson = await res.json();
-        console.log(getJson.status)
+        //console.log(getJson.status)
         if(getJson.status != 200){
             InputState=false
             ErrorState = "APIエラーです。"
@@ -24,7 +24,7 @@ export async function subAction(previousState: State ,formData: FormData) {
             InputState=false
             ErrorState = "該当する住所がありません。"
         }
-        console.log(resultsAddress);
+        //console.log(resultsAddress);
         //console.log(getJson.results)
         
     }
@@ -39,9 +39,6 @@ export async function subAction(previousState: State ,formData: FormData) {
         }
     
         //console.log(InputState);
-    return {message:[InputState,ErrorState,resultsAddress]}
-    if(formData.get("PostalCode")!= ""){
-    return{message:"true"}}
-    else{
-    return{message:"false"}}
+    return {message:[InputState,ErrorState,resultsAddress]
   }
+};

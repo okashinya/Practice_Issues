@@ -34,7 +34,7 @@ const SideBar = () => {
       <Toolbar />
       <Box sx={{ overflow: "auto" }}>
         <List>
-          {["ホーム", "Practice1", "380z", "Drafts"].map((text, index) => (
+          {["ホーム", "Practice1"].map((text, index) => (
             <ListItem key={text} disablePadding>
               <ListItemButton>
                 <ListItemIcon>
