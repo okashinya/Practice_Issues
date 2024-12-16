@@ -3,7 +3,6 @@ import { AppRouterCacheProvider } from "@mui/material-nextjs/v14-appRouter";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { Box, CssBaseline, Toolbar } from "@mui/material";
-
 import NavigationBar from "./_components/navigationbar";
 import SideBar from "./_components/sidebar";
 

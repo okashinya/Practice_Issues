@@ -10,8 +10,6 @@ import {
   ListItemText,
   Toolbar,
 } from "@mui/material";
-import InboxIcon from "@mui/icons-material/MoveToInbox";
-import MailIcon from "@mui/icons-material/Mail";
 import HomeIcon from '@mui/icons-material/Home';
 import CodeIcon from '@mui/icons-material/Code';
 import React from "react";

@@ -26,7 +26,6 @@ const PostalForm = () => {
     <TextField id="standard-basic" name="PostalCode" label="郵便番号を入力" variant="outlined" />
     <Button type="submit" variant="contained" endIcon={<SendIcon />}>送信する</Button>
     </Stack>
-
     </>;
 
     if(state.message[0]){
